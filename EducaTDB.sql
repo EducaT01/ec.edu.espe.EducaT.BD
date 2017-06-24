@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     23/06/2017 19:40:45                          */
+/* Created on:     24/6/2017 18:45:36                           */
 /*==============================================================*/
 
 
@@ -67,12 +67,12 @@ CREATE TABLE CAPACITACION_ALUMNO
 /*==============================================================*/
 CREATE TABLE CURSO
 (
-   COD_CURSO            VARCHAR(8) NOT NULL,
-   NOMBRE               VARCHAR(100) NOT NULL,
+   COD_CURSO            VARCHAR(8) NOT NULL COMMENT 'Codigo que identifica al curso ',
+   NOMBRE               VARCHAR(100) NOT NULL COMMENT 'Nombre del curso ofertado',
    OBJETIVO             VARCHAR(4000),
-   DESCRIPCION          VARCHAR(4000),
-   DURACION             NUMERIC(3) NOT NULL,
-   ESTADO               VARCHAR(3) NOT NULL DEFAULT 'ACT',
+   DESCRIPCION          VARCHAR(4000) COMMENT 'Descripcion de los contenidos del curso',
+   DURACION             NUMERIC(3) NOT NULL COMMENT 'Espesifica la duración en horas del curso',
+   ESTADO               VARCHAR(3) NOT NULL DEFAULT 'ACT' COMMENT 'Espesifica el estado actual del curso',
    PRIMARY KEY (COD_CURSO)
 );
 
@@ -98,16 +98,16 @@ ALTER TABLE DOCENTE COMMENT 'Entidad que almacena la informaciácion de los docen
 /*==============================================================*/
 CREATE TABLE PROGRAMA
 (
-   COD_PROGRAMA         VARCHAR(8) NOT NULL,
-   NOMBRE               VARCHAR(100) NOT NULL,
-   DESCRIPCION          VARCHAR(4000),
-   DURACION             NUMERIC(4) NOT NULL,
-   FECHA_INICIO         DATE,
-   FECHA_FIN            DATE,
+   COD_PROGRAMA         VARCHAR(8) NOT NULL COMMENT 'Codigo que identifica al programa',
+   NOMBRE               VARCHAR(100) NOT NULL COMMENT 'Nombre del programa',
+   DESCRIPCION          VARCHAR(4000) COMMENT 'Descripcion de los contenidos del programa',
+   DURACION             NUMERIC(4) NOT NULL COMMENT 'Duracion en horas del programa',
+   FECHA_INICIO         DATE COMMENT 'fecha en que inicia el programa',
+   FECHA_FIN            DATE COMMENT 'fecha de finalización del programa',
    PRIMARY KEY (COD_PROGRAMA)
 );
 
-ALTER TABLE PROGRAMA COMMENT 'Entidad que define un programa en el isntituto. Un programa ';
+ALTER TABLE PROGRAMA COMMENT 'Entidad que define un programa en el instituto. Un programa ';
 
 /*==============================================================*/
 /* Table: PROGRAMA_ALUMNO                                       */
@@ -125,10 +125,10 @@ CREATE TABLE PROGRAMA_ALUMNO
 /*==============================================================*/
 CREATE TABLE PROGRAMA_CURSO
 (
-   COD_PROGRAMA         VARCHAR(8) NOT NULL,
-   COD_CURSO            VARCHAR(8) NOT NULL,
-   ORDEN                NUMERIC(2) NOT NULL,
-   ESTADO               VARCHAR(3) NOT NULL DEFAULT 'ACT',
+   COD_PROGRAMA         VARCHAR(8) NOT NULL COMMENT 'Codigo del programa al que pertenece',
+   COD_CURSO            VARCHAR(8) NOT NULL COMMENT 'Codigo del curso a tomar',
+   ORDEN                NUMERIC(2) NOT NULL COMMENT 'Indica el orden en el que se deben tomar los cursos',
+   ESTADO               VARCHAR(3) NOT NULL DEFAULT 'ACT' COMMENT 'indica el estado del curso ',
    PRIMARY KEY (COD_PROGRAMA, COD_CURSO)
 );
 
