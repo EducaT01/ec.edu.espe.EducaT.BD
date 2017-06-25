@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     24/6/2017 18:45:36                           */
+/* Created on:     24/6/2017 21:38:56                           */
 /*==============================================================*/
 
 
@@ -69,7 +69,7 @@ CREATE TABLE CURSO
 (
    COD_CURSO            VARCHAR(8) NOT NULL COMMENT 'Codigo que identifica al curso ',
    NOMBRE               VARCHAR(100) NOT NULL COMMENT 'Nombre del curso ofertado',
-   OBJETIVO             VARCHAR(4000),
+   OBJETIVO             VARCHAR(4000) COMMENT 'Describe el objetivo al de tomar el curso',
    DESCRIPCION          VARCHAR(4000) COMMENT 'Descripcion de los contenidos del curso',
    DURACION             NUMERIC(3) NOT NULL COMMENT 'Espesifica la duración en horas del curso',
    ESTADO               VARCHAR(3) NOT NULL DEFAULT 'ACT' COMMENT 'Espesifica el estado actual del curso',
