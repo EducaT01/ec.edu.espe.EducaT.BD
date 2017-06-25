@@ -3,7 +3,6 @@
 /* Created on:     24/6/2017 21:38:56                           */
 /*==============================================================*/
 
-
 DROP TABLE IF EXISTS ALUMNO;
 
 DROP TABLE IF EXISTS CAPACITACION;
@@ -42,7 +41,7 @@ CREATE TABLE CAPACITACION
 (
    COD_CAPACITACION     INT NOT NULL AUTO_INCREMENT,
    COD_CURSO            VARCHAR(8) NOT NULL,
-   COD_DOCENTE          VARCHAR(10) COMMENT 'Clave primaria que corresponde a la cÈdula de identidad del docente',
+   COD_DOCENTE          VARCHAR(10) COMMENT 'Clave primaria que corresponde a la c√©dula de identidad del docente',
    FECHA_INICIO         DATE NOT NULL,
    FECHA_FIN            DATE NOT NULL,
    ESTADO               VARCHAR(3) NOT NULL DEFAULT 'DEF',
@@ -71,19 +70,19 @@ CREATE TABLE CURSO
    NOMBRE               VARCHAR(100) NOT NULL COMMENT 'Nombre del curso ofertado',
    OBJETIVO             VARCHAR(4000) COMMENT 'Describe el objetivo al de tomar el curso',
    DESCRIPCION          VARCHAR(4000) COMMENT 'Descripcion de los contenidos del curso',
-   DURACION             NUMERIC(3) NOT NULL COMMENT 'Espesifica la duraciÛn en horas del curso',
+   DURACION             NUMERIC(3) NOT NULL COMMENT 'Espesifica la duraci√≥n en horas del curso',
    ESTADO               VARCHAR(3) NOT NULL DEFAULT 'ACT' COMMENT 'Espesifica el estado actual del curso',
    PRIMARY KEY (COD_CURSO)
 );
 
-ALTER TABLE CURSO COMMENT 'Entidad que registra informaciÛn referente a cada curso que ';
+ALTER TABLE CURSO COMMENT 'Entidad que registra informaci√≥n referente a cada curso que ';
 
 /*==============================================================*/
 /* Table: DOCENTE                                               */
 /*==============================================================*/
 CREATE TABLE DOCENTE
 (
-   COD_DOCENTE          VARCHAR(10) NOT NULL COMMENT 'Clave primaria que corresponde a la cÈdula de identidad del docente',
+   COD_DOCENTE          VARCHAR(10) NOT NULL COMMENT 'Clave primaria que corresponde a la c√©dula de identidad del docente',
    NOMBRE               VARCHAR(150) NOT NULL,
    DIRECCION            VARCHAR(200) NOT NULL,
    TELEFONO             VARCHAR(15) NOT NULL,
@@ -91,7 +90,7 @@ CREATE TABLE DOCENTE
    PRIMARY KEY (COD_DOCENTE)
 );
 
-ALTER TABLE DOCENTE COMMENT 'Entidad que almacena la informaci·cion de los docentes qeu d';
+ALTER TABLE DOCENTE COMMENT 'Entidad que almacena la informaci√°cion de los docentes qeu d';
 
 /*==============================================================*/
 /* Table: PROGRAMA                                              */
@@ -103,7 +102,7 @@ CREATE TABLE PROGRAMA
    DESCRIPCION          VARCHAR(4000) COMMENT 'Descripcion de los contenidos del programa',
    DURACION             NUMERIC(4) NOT NULL COMMENT 'Duracion en horas del programa',
    FECHA_INICIO         DATE COMMENT 'fecha en que inicia el programa',
-   FECHA_FIN            DATE COMMENT 'fecha de finalizaciÛn del programa',
+   FECHA_FIN            DATE COMMENT 'fecha de finalizaci√≥n del programa',
    PRIMARY KEY (COD_PROGRAMA)
 );
 
