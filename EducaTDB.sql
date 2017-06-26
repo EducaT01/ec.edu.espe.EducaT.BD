@@ -19,21 +19,23 @@ DROP TABLE IF EXISTS PROGRAMA_ALUMNO;
 
 DROP TABLE IF EXISTS PROGRAMA_CURSO;
 
+
 /*==============================================================*/
 /* Table: ALUMNO                                                */
 /*==============================================================*/
 CREATE TABLE ALUMNO
 (
-   COD_ALUMNO           VARCHAR(10) NOT NULL,
-   NOMBRE               VARCHAR(150) NOT NULL,
-   DIRECCION            VARCHAR(200) NOT NULL,
-   TELEFONO             VARCHAR(15) NOT NULL,
-   CORREO_ELECTRONICO   VARCHAR(128) NOT NULL,
-   FECHA_NACIMIENTO     DATE NOT NULL,
-   GENERO               VARCHAR(1) NOT NULL,
+   COD_ALUMNO           VARCHAR(10) NOT NULL COMMENT 'Clave primaria que corresponde a la cédula de identidad del estudiante.',
+   NOMBRE               VARCHAR(150) NOT NULL COMMENT 'Columna que corresponde al nombre y apellido del estudiante.',
+   DIRECCION            VARCHAR(200) NOT NULL COMMENT 'Columna que corresponde a la direccion de la vivienda del estudiante.',
+   TELEFONO             VARCHAR(15) NOT NULL COMMENT 'Columna que corresponde al telefono, ya sea el movil o el de casa, del estudiante.',
+   CORREO_ELECTRONICO   VARCHAR(128) NOT NULL COMMENT 'Columna correspondiente al correo electronico del estudiante.',
+   FECHA_NACIMIENTO     DATE NOT NULL COMMENT 'Columna correspondiente a la fecha de nacimiento del estudiante.',
+   GENERO               VARCHAR(1) NOT NULL COMMENT 'Columna correspondiente al genero del estudiante, este puede ser masculino (M), femenino (F) u otros (O).',
    PRIMARY KEY (COD_ALUMNO)
 );
 
+ALTER TABLE ALUMNO COMMENT 'Entidad que almacena la informaciácion de los alumnos que re';
 /*==============================================================*/
 /* Table: CAPACITACION                                          */
 /*==============================================================*/
@@ -54,13 +56,14 @@ CREATE TABLE CAPACITACION
 /*==============================================================*/
 CREATE TABLE CAPACITACION_ALUMNO
 (
-   COD_CAPACITACION     INT NOT NULL,
-   COD_ALUMNO           VARCHAR(10) NOT NULL,
-   NOTA_FINAL           NUMERIC(4,2) NOT NULL,
-   ESTADO               VARCHAR(3) NOT NULL DEFAULT 'INS',
+   COD_CAPACITACION     INT NOT NULL COMMENT 'Clave primaria que corresponde la que identifica a la entidad "CAPACITACION".',
+   COD_ALUMNO           VARCHAR(10) NOT NULL COMMENT 'Clave primaria que corresponde la que identifica a la entidad "ALUMNO".',
+   NOTA_FINAL           NUMERIC(4,2) NOT NULL COMMENT 'Columna que corresponde a la nota final obtenida por el estudiante en los programas.',
+   ESTADO               VARCHAR(3) NOT NULL DEFAULT 'INS' COMMENT 'Columna correspondiente al estado en que se encuentra la capacitacion por alumno, esta puede ser inscrito (INS), matriculado (MAT), aprobado (APR), reprobado (REP), reprobado por faltas (RFA).',
    PRIMARY KEY (COD_CAPACITACION, COD_ALUMNO)
 );
 
+ALTER TABLE CAPACITACION_ALUMNO COMMENT 'Entidad encargada de mostrar la relacion existente entre las';
 /*==============================================================*/
 /* Table: CURSO                                                 */
 /*==============================================================*/
@@ -113,12 +116,13 @@ ALTER TABLE PROGRAMA COMMENT 'Entidad que define un programa en el instituto. Un
 /*==============================================================*/
 CREATE TABLE PROGRAMA_ALUMNO
 (
-   COD_PROGRAMA         VARCHAR(8) NOT NULL,
-   COD_ALUMNO           VARCHAR(10) NOT NULL,
-   ESTADO               VARCHAR(3) NOT NULL,
+   COD_PROGRAMA         VARCHAR(8) NOT NULL COMMENT 'Clave primaria correspondiente a la que identifica a la entidad "PROGRAMA".',
+   COD_ALUMNO           VARCHAR(10) NOT NULL COMMENT 'Clave primaria correspondiente a la que identifica a la entidad "ALUMNO".',
+   ESTADO               VARCHAR(3) NOT NULL COMMENT 'Columna que corresponde al estado del estudiante con respecto a algun programa, este puede ser: inscrito (INS), matriculado (MAT), en progreso (PRO) o finalizafo (FIN).',
    PRIMARY KEY (COD_PROGRAMA, COD_ALUMNO)
 );
 
+ALTER TABLE PROGRAMA_ALUMNO COMMENT 'Entidad encargada de mostrar la relacion existente entre las';
 /*==============================================================*/
 /* Table: PROGRAMA_CURSO                                        */
 /*==============================================================*/
