@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS PROGRAMA_CURSO;
 /*==============================================================*/
 CREATE TABLE ALUMNO
 (
-   COD_ALUMNO           VARCHAR(10) NOT NULL COMMENT 'Clave primaria que corresponde a la c閐ula de identidad del estudiante.',
+   COD_ALUMNO           VARCHAR(10) NOT NULL COMMENT 'Clave primaria que corresponde a la c茅dula de identidad del estudiante.',
    NOMBRE               VARCHAR(150) NOT NULL COMMENT 'Columna que corresponde al nombre y apellido del estudiante.',
    DIRECCION            VARCHAR(200) NOT NULL COMMENT 'Columna que corresponde a la direccion de la vivienda del estudiante.',
    TELEFONO             VARCHAR(15) NOT NULL COMMENT 'Columna que corresponde al telefono, ya sea el movil o el de casa, del estudiante.',
@@ -35,24 +35,24 @@ CREATE TABLE ALUMNO
    PRIMARY KEY (COD_ALUMNO)
 );
 
-ALTER TABLE ALUMNO COMMENT 'Entidad que almacena la informaci醕ion de los alumnos que re';
+ALTER TABLE ALUMNO COMMENT 'Entidad que almacena la informaci谩cion de los alumnos que re';
 
 /*==============================================================*/
 /* Table: CAPACITACION                                          */
 /*==============================================================*/
 CREATE TABLE CAPACITACION
 (
-   COD_CAPACITACION     INT NOT NULL AUTO_INCREMENT COMMENT 'Clave primaria que corresponde al ID de la capacitaci髇.',
-   COD_CURSO            VARCHAR(8) NOT NULL COMMENT 'Clave primaria que corresponde al ID que tiene el curso en la instituci髇.',
-   COD_DOCENTE          VARCHAR(10) COMMENT 'Clave primaria que corresponde a la c閐ula de identidad del docente.',
-   FECHA_INICIO         DATE NOT NULL COMMENT 'Fecha en la que se tiene previsto empezar la capacitaci髇.',
-   FECHA_FIN            DATE NOT NULL COMMENT 'Fecha en la que se tiene previsto finalizar la capacitaci髇.',
+   COD_CAPACITACION     INT NOT NULL AUTO_INCREMENT COMMENT 'Clave primaria que corresponde al ID de la capacitaci贸n.',
+   COD_CURSO            VARCHAR(8) NOT NULL COMMENT 'Clave primaria que corresponde al ID que tiene el curso en la instituci贸n.',
+   COD_DOCENTE          VARCHAR(10) COMMENT 'Clave primaria que corresponde a la c茅dula de identidad del docente.',
+   FECHA_INICIO         DATE NOT NULL COMMENT 'Fecha en la que se tiene previsto empezar la capacitaci贸n.',
+   FECHA_FIN            DATE NOT NULL COMMENT 'Fecha en la que se tiene previsto finalizar la capacitaci贸n.',
    ESTADO               VARCHAR(3) NOT NULL DEFAULT 'DEF' COMMENT 'Estado en la que se encuentra cada una de las capacitaciones, estos estados pueden ser: "inscripciones", "en progreso", "finalizada", "cancelada" y "definida".',
-   CAPACIDAD            NUMERIC(2) NOT NULL COMMENT 'Es la capacidada en numero de personas que pueden recibir la capacitaci髇.',
+   CAPACIDAD            NUMERIC(2) NOT NULL COMMENT 'Es la capacidada en numero de personas que pueden recibir la capacitaci贸n.',
    PRIMARY KEY (COD_CAPACITACION)
 );
 
-ALTER TABLE CAPACITACION COMMENT 'Entidad que registar la informaci髇 de  las capacitaciones c';
+ALTER TABLE CAPACITACION COMMENT 'Entidad que registar la informaci贸n de  las capacitaciones c';
 
 /*==============================================================*/
 /* Table: CAPACITACION_ALUMNO                                   */
@@ -73,27 +73,27 @@ ALTER TABLE CAPACITACION_ALUMNO COMMENT 'Entidad encargada de mostrar la relacio
 /*==============================================================*/
 CREATE TABLE CURSO
 (
-   COD_CURSO            VARCHAR(8) NOT NULL COMMENT 'Clave primaria que corresponde al ID que tiene el curso en cuesti髇.',
-   NOMBRE               VARCHAR(100) NOT NULL COMMENT 'Nombre que recibe el curso que puede ser impartido en un prograam de capacitaci髇',
+   COD_CURSO            VARCHAR(8) NOT NULL COMMENT 'Clave primaria que corresponde al ID que tiene el curso en cuesti贸n.',
+   NOMBRE               VARCHAR(100) NOT NULL COMMENT 'Nombre que recibe el curso que puede ser impartido en un prograam de capacitaci贸n',
    OBJETIVO             VARCHAR(4000) COMMENT 'Es el objetivo que se pretende alcanzar con el curso que se aprende.',
-   DESCRIPCION          VARCHAR(4000) COMMENT 'Detalles espec韋icos de lo que es el curso y en que consiste el aprendizaje que se ira a recibir.',
-   DURACION             NUMERIC(3) NOT NULL COMMENT 'Duraci髇 que tiene el curso en un periodo de tiempo, en este caso n鷐ero de horas.',
+   DESCRIPCION          VARCHAR(4000) COMMENT 'Detalles espec铆ficos de lo que es el curso y en que consiste el aprendizaje que se ira a recibir.',
+   DURACION             NUMERIC(3) NOT NULL COMMENT 'Duraci贸n que tiene el curso en un periodo de tiempo, en este caso n煤mero de horas.',
    ESTADO               VARCHAR(3) NOT NULL DEFAULT 'ACT' COMMENT 'Es el estado del curos, y se lo puede encontrar en los estados de "activo" e "inactivo".',
    PRIMARY KEY (COD_CURSO)
 );
 
-ALTER TABLE CURSO COMMENT 'Entidad que registra informaci髇 referente a cada curso que ';
+ALTER TABLE CURSO COMMENT 'Entidad que registra informaci贸n referente a cada curso que ';
 
 /*==============================================================*/
 /* Table: DOCENTE                                               */
 /*==============================================================*/
 CREATE TABLE DOCENTE
 (
-   COD_DOCENTE          VARCHAR(10) NOT NULL COMMENT 'Clave primaria que corresponde a la c閐ula de identidad del docente.',
+   COD_DOCENTE          VARCHAR(10) NOT NULL COMMENT 'Clave primaria que corresponde a la c茅dula de identidad del docente.',
    NOMBRE               VARCHAR(150) NOT NULL COMMENT 'Nombre que consta de nombre y apellido de cada uno de los docentes del instituto.',
-   DIRECCION            VARCHAR(200) NOT NULL COMMENT 'Es la direcci髇 en la que viven los docentes que imparten clases en el instituto.',
-   TELEFONO             VARCHAR(15) NOT NULL COMMENT 'Tel閒ono personal de los docentes para ser contactados.',
-   CORREO_ELECTRONICO   VARCHAR(128) NOT NULL COMMENT 'Es el correo electr髇ico que tienen los docentes, para hacerles llegar cualquier comunicado.',
+   DIRECCION            VARCHAR(200) NOT NULL COMMENT 'Es la direcci贸n en la que viven los docentes que imparten clases en el instituto.',
+   TELEFONO             VARCHAR(15) NOT NULL COMMENT 'Tel茅fono personal de los docentes para ser contactados.',
+   CORREO_ELECTRONICO   VARCHAR(128) NOT NULL COMMENT 'Es el correo electr贸nico que tienen los docentes, para hacerles llegar cualquier comunicado.',
    PRIMARY KEY (COD_DOCENTE)
 );
 
@@ -106,8 +106,8 @@ CREATE TABLE PROGRAMA
 (
    COD_PROGRAMA         VARCHAR(8) NOT NULL COMMENT 'Clave primaria que identifica al programa.',
    NOMBRE               VARCHAR(100) NOT NULL COMMENT 'Es el nombre que recibe el programa por los temas que llega a tratar.',
-   DESCRIPCION          VARCHAR(4000) COMMENT 'Es la descripci髇 que tiene ese curso de una manera mucho m醩 espec韋ica.',
-   DURACION             NUMERIC(4) NOT NULL COMMENT 'Es el n鷐ero de d韆s que dura cada uno de los programas.',
+   DESCRIPCION          VARCHAR(4000) COMMENT 'Es la descripci贸n que tiene ese curso de una manera mucho m谩s espec铆fica.',
+   DURACION             NUMERIC(4) NOT NULL COMMENT 'Es el n煤mero de d铆as que dura cada uno de los programas.',
    FECHA_INICIO         DATE COMMENT 'Fecha en la que se tiene previsto empezar el programa.',
    FECHA_FIN            DATE COMMENT 'Fecha en la que se tiene previsto finalizar  el programa.',
    PRIMARY KEY (COD_PROGRAMA)
@@ -133,10 +133,10 @@ ALTER TABLE PROGRAMA_ALUMNO COMMENT 'Entidad encargada de mostrar la relacion ex
 /*==============================================================*/
 CREATE TABLE PROGRAMA_CURSO
 (
-   COD_PROGRAMA         VARCHAR(8) NOT NULL,
-   COD_CURSO            VARCHAR(8) NOT NULL,
-   ORDEN                NUMERIC(2) NOT NULL,
-   ESTADO               VARCHAR(3) NOT NULL DEFAULT 'ACT',
+   COD_PROGRAMA         VARCHAR(8) NOT NULL COMMENT 'Codigo del programa al que pertenece',
+   COD_CURSO            VARCHAR(8) NOT NULL COMMENT 'Codigo del curso a tomar',
+   ORDEN                NUMERIC(2) NOT NULL COMMENT 'Indica el orden en el que se deben tomar los cursos',
+   ESTADO               VARCHAR(3) NOT NULL DEFAULT 'ACT' COMMENT 'indica el estado del curso ',
    PRIMARY KEY (COD_PROGRAMA, COD_CURSO)
 );
 
